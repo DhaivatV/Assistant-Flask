@@ -125,13 +125,13 @@ def get_response(prompt_input):
 
 def query_response(user_query) :
     user_query = user_query.upper()
-    query = user_query.replace('CSI', 'corporate strategy and implementation in aaruush').replace('ORM', 'Operations and Resource Management in aaruush').replace('ORM', 'Operations and Resource Management in aaruush').replace('workshops', 'Workshops in aaruush').replace('Rathinam', 'Dr. A. Rathinam').replace('RATHINAM', 'Dr. A. Rathinam').replace('SANJUKTA', 'Sanjukta from Team Envision and Yuddhame').replace('CREATIVES', 'creatives committee of aaruush')
+    query = user_query.replace('CSI', 'corporate strategy and implementation in aaruush').replace('ORM', 'Operations and Resource Management in aaruush').replace('ORM', 'Operations and Resource Management in aaruush').replace('workshops', 'Workshops in aaruush').replace('Rathinam', 'Dr. A. Rathinam').replace('RATHINAM', 'Dr. A. Rathinam, the convenor of Aaruush.').replace('SANJUKTA', 'Sanjukta from Team Envision and Yuddhame').replace('CREATIVES', 'creatives committee of aaruush')
     print(query)
     context = (get_similar_context(query)).strip()
     prompt_input_u = f'{context}'
-    query_f = ((func(prompt_input_u)).strip())
+    query_f = ((func(prompt_input_u)).strip())+"This is edition i.e. A'23 is 17th edition of aaruush."
     # print(query)
-    return (get_response(((query_f + f'\n\nQ:{query}.This is edition i.e. A"23 is 17th edition of aaruush if available give the response of A"23 else A"22?\n\nA:'))))
+    return (get_response(((query_f + f'\n\nQ:{query}.if available give the response of A"23 else A"22?\n\nA:'))))
 
 @app.route('/query', methods=['POST'])
 def query():
