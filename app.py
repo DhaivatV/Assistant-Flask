@@ -128,10 +128,10 @@ def query_response(user_query) :
     query = user_query.replace('CSI', 'corporate strategy and implementation in aaruush').replace('ORM', 'Operations and Resource Management in aaruush').replace('ORM', 'Operations and Resource Management in aaruush').replace('workshops', 'Workshops in aaruush').replace('Rathinam', 'Dr. A. Rathinam').replace('RATHINAM', 'Dr. A. Rathinam , the convenor of aaruush').replace('SANJUKTA', 'Sanjukta from Team Envision and Yuddhame').replace('CREATIVES', 'creatives committee of aaruush')
     print(query)
     context = (get_similar_context(query)).strip()
-    prompt_input_u = f'{context}'+ "This is edition i.e. A'23 is 17th edition of aaruush "
+    prompt_input_u = f'{context}'+ "This is edition i.e. A'23 is 17th edition of aaruush. act as a normal chatbot for small talks"
     query_f = ((func(prompt_input_u)).strip())
-    # print(query)
-    return (get_response(((query_f + f'\n\nQ:{query}.if available give the response of A"23 else A"22?\n\nA:'))))
+    print(query_f)
+    return (get_response(((query_f + f'\n\nQ:{query}.if available give the response on the data of this edition else previous edition?\n\nA:'))))
 
 @app.route('/query', methods=['POST'])
 def query():
