@@ -6,7 +6,10 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from googletrans import Translator
+
 load_dotenv()
+translator = Translator()
 
 app = Flask(__name__)
 CORS(app)
@@ -135,6 +138,7 @@ def query_response(user_query) :
 def query():
     data = request.get_json()
     user_query = data.get('user_query')
+    user_query = (translator.translate(user_query)).text
     response = query_response(user_query)
     return jsonify({'response': response})
 
