@@ -3,86 +3,78 @@ import openai
 import pandas as pd
 from dotenv import load_dotenv
 import os
+import requests
 
 load_dotenv()
 
 df = pd.read_csv('final_qa.csv')
 
-COMPLETIONS_MODEL = "text-davinci-003"
-EMBEDDING_MODEL = "text-embedding-ada-002"
+question_list = []
+answer_list = []
+
+Question_list = df['Questions'].to_list()
+Answer_list = df['Answers'].to_list()
 
 
-def get_embedding(text: str, model: str=EMBEDDING_MODEL) -> list:
-    result = openai.Embedding.create(
-      model=model,
-      input=text
-    )
-    return result["data"][0]["embedding"]
+for question in Question_list:
+   temp_ques = question.split(",")
+   for ques in temp_ques:
+      ques_temp = ques.split('\r\n')
+      for final_ques in ques_temp:
+        question_list.append(final_ques[2:])
 
-def load_embeddings(fname: str) -> dict:
-    """
-    Read the document embeddings and their keys from a CSV.
+def fetch_row_by_question(question):
+    for index, row in df.iterrows():
+        if question in row['Questions']:
+            ans = (row['Answers'][2:].split('\r\n'))
+            ans_str = " ".join(ans)
+            return ans_str
+    return None
+
+
+
+def search(query):
+
+  API_URL = "https://api-inference.huggingface.co/models/sentence-transformers/all-MiniLM-L6-v2"
+  api_token = "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"
+  headers = {"Authorization": f"Bearer {api_token}"}
+
+  def req(payload):
+      response = requests.post(API_URL, headers=headers, json=payload)
+      return response.json()
+
+  data = req(
+      {
+          "inputs": {
+              "source_sentence": query,
+              "sentences": question_list
+          }
+      }
+
+
+  )
+
+
+  output_string = ""
+
+  for similarity in data:
+    if similarity>0.9:
+      i = data.index(similarity)
+      res = fetch_row_by_question(question_list[i])
+      output_string = output_string + res
     
-    fname is the path to a CSV with exactly these named columns: 
-        "title", "heading", "0", "1", ... up to the length of the embedding vectors.
-    """
-    
-    df = pd.read_csv(fname, header=0)
-    max_dim = max([int(c) for c in df.columns if c != "Title" and c != "Heading"])
-    return {
-           (r.Title, r.Heading): [r[str(i)] for i in range(max_dim + 1)] for _, r in df.iterrows()}
+    elif similarity>0.7:
+      i = data.index(similarity)
+      res = fetch_row_by_question(question_list[i])
+      output_string = output_string + res
+
+    elif similarity>0.5:
+      i = data.index(similarity)
+      res = fetch_row_by_question(question_list[i])
+      output_string = output_string + res
 
 
-
-
-def vector_similarity(x: list, y: list) -> float:
-    """
-    Returns the similarity between two vectors.
-    
-    Because OpenAI Embeddings are normalized to length 1, the cosine similarity is the same as the dot product.
-    """
-    return np.dot(np.array(x), np.array(y))
-
-def order_document_sections_by_query_similarity(query: str, contexts: dict) -> list:
-    """
-    Find the query embedding for the supplied query, and compare it against all of the pre-calculated document embeddings
-    to find the most relevant sections. 
-    
-    Return the list of document sections, sorted by relevance in descending order.
-    """
-
-    similar_doc_list = []
-    candidate = []
-    query_embedding = get_embedding(query)
-    
-    document_similarities = sorted([
-        (vector_similarity(query_embedding, doc_embedding), doc_index) for doc_index, doc_embedding in contexts.items()
-    ], reverse=True)
-
-    for doc in document_similarities:
-      similar_doc_list.append(doc[1])
-
-    for items in similar_doc_list:
-      title = items[0]
-      heading = items[1]
-      row = df[(df['Title'] == title) & (df['Heading'] == heading)]
-      context_arr = row["Context"].values
-      # print(context)
-      candidate.append(context_arr[0])
-
-    len_cand = len(candidate)
-
-    if len_cand<=2:
-      return candidate
-    else:
-      return candidate[:15]
-    
-def get_similar_context(query):
-  document_embeddings = load_embeddings("final_embeddings.csv")
-  context_list = (order_document_sections_by_query_similarity(query, document_embeddings))
-  context = " ".join(context_list)
-  
-  return context.replace('\n',' ')
+  return output_string
 
 
 
