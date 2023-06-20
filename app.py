@@ -6,11 +6,11 @@ import numpy as np
 import pandas as pd
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from googletrans import Translator
 import requests
+import json
 
 load_dotenv()
-translator = Translator()
+
 
 app = Flask(__name__)
 CORS(app)
@@ -18,35 +18,34 @@ CORS(app)
 
 openai.api_key =  os.getenv('API_KEY')
 
-file_path = os.path.join(os.path.dirname(__file__))
-final_qa_path = os.path.join(file_path, 'final_qa.csv')
-df = pd.read_csv(final_qa_path)
-
-df = pd.read_csv('final_qa.csv')
-
-question_list = []
-answer_list = []
-
-Question_list = df['Questions'].to_list()
-Answer_list = df['Answers'].to_list()
+with open('data.json', 'r') as file:
+    data = json.load(file)
 
 
-for question in Question_list:
-   temp_ques = question.split(",")
-   for ques in temp_ques:
-      ques_temp = ques.split('\r\n')
-      for final_ques in ques_temp:
-        question_list.append(final_ques[2:])
+df = pd.DataFrame(data['details']) 
+d_c_list = df['name'].to_list()
+domain_list = d_c_list[:10]
+committee_list = d_c_list[10:23]
+for i in range(len(df)):
+    name = df.loc[i, 'name']
+    if name in domain_list:
+        df.loc[i, 'domain/committee'] = "domain"
+    elif name in committee_list :
+        df.loc[i, 'domain/committee'] = "committee"
+    else:
+        df.loc[i, 'domain/committee'] = "team"
 
-def fetch_row_by_question(question):
+df['combined_info'] = df['name'] + " " + df['domain/committee'] + " " + df['organizers'] + " " + df['description'] + " " + df['events'] 
+list_info = df['combined_info'].to_list()
+
+
+
+def fetch_row_by_info(info):
     for index, row in df.iterrows():
-        if question in row['Questions']:
-            ans = (row['Answers'][2:].split('\r\n'))
-            ans_str = " ".join(ans)
-            return ans_str
+        if info in row['combined_info']:
+            res = row.to_dict()
+            return res
     return None
-
-
 
 def similar_context(query):
 
@@ -61,42 +60,42 @@ def similar_context(query):
   data = req(
       {
           "inputs": {
-              "source_sentence": query,
-              "sentences": question_list
+              "source_sentence": query.lower(),
+              "sentences": list_info
           }
       }
 
 
   )
-
-
-  output_string = ""
-
+              
+  smi_index = []
+  
   for similarity in data:
     if similarity>0.9:
-      i = data.index(similarity)
-      res = fetch_row_by_question(question_list[i])
-      output_string = output_string + res
-
-    elif similarity>=0.7:
-      i = data.index(similarity)
-      res = fetch_row_by_question(question_list[i])
-      output_string = output_string + res
+       smi_index.append(similarity)
     
+    
+    elif similarity>0.7:
+       smi_index.append(similarity)
 
-  if output_string != "" :
-    return output_string
-  
-  else :
-     output_string = "None"
-     return output_string
+    elif similarity>0.5:
+       smi_index.append(similarity)
+
+    elif similarity>0.4:
+       smi_index.append(similarity)
+
+  if len(smi_index) ==1:
+     exact_info_index = data.index(smi_index[0])
+
+  elif len(smi_index) >1:
+     smi_index.sort() 
+     exact_info_index = data.index(smi_index[-1])
+  else:
+      return("Sorry!! Not enough info provided in question")
 
      
-  
-
-
-
-
+      
+  return json.dumps(fetch_row_by_info(list_info[exact_info_index] ))
 
 def get_response(prompt_input):
     response = openai.Completion.create(
@@ -112,31 +111,30 @@ def get_response(prompt_input):
 
     return (((response.get('choices'))[0]).get('text'))
 
-def strip_func(value):
-    return ''.join(value.splitlines())
+
 
 def query_response(user_query) :
   
     context = (similar_context(user_query))
-    print(context)
-    if context != "None":
-      final_query = (((context + f'\n\nQ:{user_query}\n\nA:')))
-      res = (get_response(final_query))
-      return res
-    
+    if context == "Sorry!! Not enough info provided in question":
+        return (context)
     else:
-       return("Sorry!! Please Try Again Later")
+        final_query = ((("Give precise answers for the asked questions."+context + f'\n\nQ:{user_query}\n\nA:')))
+        res = (get_response(final_query))
+        return res
 
 
 @app.route('/query', methods=['POST'])
 def query():
     data = request.get_json()
-    user_query = data.get('user_query')
+    user_query = (data.get('user_query'))
     print(user_query)
-    response = query_response(user_query)
-    print(response)
-    return jsonify({'response': response})
-    # return ("Hello")
+    try:
+      response = query_response(user_query)
+      return jsonify({'response': response})
+    except:
+        return("Error!! Please Try Again Later.")
+
 
 if __name__ == '__main__':
     app.run(debug=True)

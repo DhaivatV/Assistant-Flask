@@ -1,0 +1,252 @@
+{
+  
+    "details"  :   [ {
+
+                "name": "Agritech",
+                "organizers": "Archita Arora",
+                "email": "agritech@aaruush.org",
+                "keywords": "IoT, drones, robotics, machinery, artificial intelligence, efficiency, profitability, sustainability",
+                "description": "Agritech tries to find ways to implement technologies like IoT, drones, robotics, machinery, and artificial intelligence to make agriculture more efficient, profitable, and sustainable.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Architecture",
+                "organizers": "Archita Arora",
+                "email": "architecture@aaruush.net",
+                "keywords": "planning, design, light usage, space, layouts, computer modeling software, programming, innovation, efficiency",
+                "description": "Architecture encompasses elements related to planning, design, light usage, space, layouts, computer modeling software, and programming that help digitalize architectures core processes, thereby providing a comprehensive experience of modern architecture. You need planning, innovation, efficiency, and design enhancement, and magic ensues.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Bluebook",
+                "organizers": "Konatham Gayathri",
+                "email": "bluebook@aaruush.net",
+                "keywords": "bioengineering, life sciences, chemistry, quizzes, FAQ rounds, learning, concepts",
+                "description": "Bluebook is a consortium of bioengineering, life sciences, and chemistry events. Each event makes sure that the participants enjoy and learn new concepts that they were previously unaware of through quizzes and FAQ rounds.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Cosmic City",
+                "organizers": "Prachi Jain",
+                "email": "cosmiccity@aaruush.org",
+                "keywords": "astronomy, astrophysics, cosmology, space exploration, universe, cosmos, adventure",
+                "description": "The new name Cosmic City is here to give you an Interstellar experience. With a plethora of activities, events, and workshops on astronomy, astrophysics, cosmology, and space exploration, we offer the best that's suited to your interests. Join us as we embark on an adventure through the vastness of the universe and into the depths of the cosmos.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Digital Design",
+                "organizers": "Prachi Jain",
+                "email": "digitaldesign@aaruush.org",
+                "keywords": "problem-solving, images, words, graphic forms, visual communication, digital imaging, animation, computing techniques",
+                "description": "Digital Design is the domain of problem-solving through images, words, or graphic forms. It is a subset of visual communication and graphic design. It includes the work of various fields such as digital imaging, videography, modern art, music, costume design, visual effects, animation, and software editing of ads, and the addition of computing techniques perks up the charm. It is a uniquely crafted domain for all sound and visual artists at heart.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Electrizite",
+                "organizers": "Konatham Gayathri",
+                "email": "electrizite@aaruush.net",
+                "keywords": "resistors, diodes, capacitors, inductors, artificial intelligence, microprocessors, embedded systems",
+                "description": "This electrizite makes provisions for the participants to be bombarded by a stream of resistors, diodes, capacitors, and inductors. The knowledge of topics like artificial intelligence, microprocessors, integrated circuitry, embedded systems, etc., is the order of the course.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Fundaz",
+                "organizers": "Abhinay Ponaganti",
+                "email": "fundaz@aaruush.net",
+                "keywords": "maths, science, puzzles, quizzes, logical reasoning, crosswords, entertainment",
+                "description": "Fundaz deals with the basic concepts of maths and science spiked with entertainment. If puzzles, quizzes, logical reasoning, and crosswords interest you, this fundaz is where you should be!",
+                "events":"NA"
+            },
+
+            {
+                "name": "Konstruktion & Canoe Challenge",
+                "organizers": "Roshan M",
+                "email": "konstruktion@aaruush.net",
+                "keywords": "civil engineering, infrastructure, designing, fabricating, CAD software, concrete canoe",
+                "description": "Konstruktion puts together events focused on civil engineering and infrastructure, highlighting the part of the spectrum of designing, fabricating, and practical testing of models using CAD software as the mandate. The Canoe challenge is a junction for the best of minds that requires immense patience and hard work where the teams design, analyze models, and cast a lightweight concrete canoe within a limited time frame.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Machination",
+                "organizers": "Anwesh Shaw",
+                "email": "machination@aaruush.net",
+                "keywords": "mechanical engineering, automobile engineering, designing machines, blueprints, automobiles, technical aspects",
+                "description": "Machination is a domain that covers the various technical aspects related to the school of mechanical and automobile engineering. This domain involves various subjects such as designing machines, drawing blueprints, adding and improving various automobiles' technical aspects, and bringing in solutions for problems by applying various techniques revolving around contraption functions.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Magefficie and Entrepreneurial Symposium",
+                "organizers": "Kartik Tata",
+                "email": "magefficie@aaruush.net",
+                "keywords": "business skills, management skills, marketing, finance, startups, entrepreneurs, business planning",
+                "description": "Magefficie and startups encompass various events that test a student's business and management skills. Marketing, finance, share markets, entrepreneurs, startups, corporate strategies, and business planning form the basics of this domain.",
+                "events":"NA"
+            },
+    
+
+            {
+                "name": "Challenges & Hackathons (C&H)",
+                "organizers": "Aryan Raj Singh, Prasun Mondal",
+                "email": "challenges_hackathons@aaruush.org",
+                "keywords": "competitions, technical skills, adaptability, hackathons, robotics, coding",
+                "description": "The Challenges & Hackathons, also known as C&H, committee showcases a series of challenging competitions that test participants' technical skills and ability to adapt to challenging constraints. It offers mind-boggling, out-of-the-box competitions in the form of Hackathons, Robotics and Design Challenges, coding competitions, and more.",
+                "events":"ImpactAI: A artificial Intelligence and machine learning hackathon."
+            },
+            
+            {
+                "name": "Championships",
+                "organizers": "Aditya S Suraj Tirumani, Ravi R",
+                "email": "championships@aaruush.org",
+                "keywords": "engineering, computer science, robotics, Robo-Wars, RC Cars, Drone Racing, coding",
+                "description": "The Championships committee is responsible for planning, organizing, and overseeing the execution of specialized championships in engineering, computer science, robotics, and other technical fields. It features mega-events like Robo-Wars, RC Cars, Drone Racing, line follower challenge, and Coding.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Corporate Strategy & Implementation (CSI)",
+                "organizers": "Aditya Singh, Akarsh Kishore, Raksha Thakur, Sahil Das",
+                "email": "csiorg@aaruush.net",
+                "keywords": "publicity, work plans, execution, digital presence, crowd management, crisis management",
+                "description": "The Corporate Strategy & Implementation ,also known as CSI, committee is the dynamic on-ground army of Aaruush. It is responsible for internal and external publicity, strategizing work plans, executing them, maintaining the digital presence of the fest, crowd management, crisis management, and fostering a strong bond between the organization and its alumni.",
+                "events":"NA"
+            },
+            {
+                "name": "Creatives",
+                "organizers": "Dhruv Rawat, Eshaan Bhargava, Nazaf Hussain",
+                "email": "creatives@aaruush.net",
+                "keywords": "photography, videography, graphic designing, VFX, music, video editing, scripting",
+                "description": "The Creatives committee covers various subnames, including photography, videography, graphic designing, VFX, music, video editing, and scripting. It provides a platform for participants to unleash their artistic vision and bring their ideas to life.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Deco and Arts",
+                "organizers": "Veera Sai Adarsh Vankayala, Gaddam Rohith, Hredhya Sudheer",
+                "email": "deco_arts@aaruush.net",
+                "keywords": "visual experience, aerial decorations, models, banners, lights, artistic",
+                "description": "The Deco and Arts committee is responsible for creating a visual experience that sets the tone of the fest. They handle various aspects such as aerial decorations, models, artistic banners, lights, and more.",
+                "events":"NA"
+            },
+
+            {
+                "name": "External Affairs (EA)",
+                "organizers": "Khushal Dadhania, Namita Rai, Sabyasachi Sarma",
+                "email": "highlights@aaruush.org",
+                "keywords": "guest lectures, industrial conclave, UnConference, alumni talks, hospitality, transportation",
+                "description": "The External Affairs committee, also known as EA, organizes events like Guest Lectures, Industrial Conclave, UnConference, and Alumni Talks. They take care of all the dignitaries and alumni who become a part of the fest, including their hospitality and transportation. They foster a strong bond between the organization and its guests.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Finance ",
+                "organizers": "Karthik Sai, Sambhav Jindal",
+                "email": "finance_hr@aaruush.net",
+                "keywords": "accounts, expenditures, budget, financial audits, resource management",
+                "description": "The Finance Committee examines accounts, scrutinizes proposals for expenditures, and submits the annual budget for Aaruush. They ensure that all expenditures are approved and within the budgetary limits based on available resources and income.Finance committee plays a very important role in aaruush. Finance deals with workshops for sales of CR. Finance also deals with CSI for sales.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Initiatives",
+                "organizers": "Akash Gupta, Diya Giri, Mukund Maheshwari",
+                "email": "initiatives@aaruush.net",
+                "keywords": "society, environment, technology, sustainability",
+                "description": "The Initiatives committee encourages endeavors aimed at aiding, sustaining, growing, and promoting society at large. They engage with events and campaigns such as T-Summit, SRM Run, and Wednesday Speaks, focusing on the intersection of environment, technology, and sustainability. They strive to take the fest to higher echelons of success while fostering empathy and positive impact.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Operations and Resource Management (ORM)",
+                "organizers": "Karanam Jaya Vardhan, Yuvan Sai Potru",
+                "email": "orm@aaruush.net",
+                "keywords": "resource management, permissions, crowd control, crisis management, event management",
+                "description": "The Operations and Resource Management, also known as ORM, Committee is responsible for all resource requirements and their management. They obtain permissions, control crowds, perform crisis management, brainstorm and innovate solutions for event management. They ensure the smooth flow of all events and fulfill the necessary requirements.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Public Relations (PR)",
+                "organizers": "Athul K Babu, Prakhar Bharadwaj, Shreya Khera",
+                "email": "pro@aaruush.net",
+                "keywords": "communication, content writing, documentation, public speaking, creativity",
+                "description": "The Public Relations committee, also known as PR, establishes and maintains lines of communication between the organization and the public. They handle content writing, documentation, certified patronages, accreditations, anchoring, and other activities. PR builds interpersonal and public speaking skills and allows individuals to address large crowds, explore creativity, and contribute to Aaruush's success.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Quality Assurance (QA)",
+                "organizers": "Mukund Maheshwari, Prakhar Bharadwaj, Purva Tarale",
+                "email": "qa@aaruush.net",
+                "keywords": "quality standards, data analysis, financial audits, recommendations, accommodation management",
+                "description": "The Quality Assurance committee, also known as QA, ensures that all aspects of the fest meet the highest standards and continuously improve. They analyze data, write reports, follow up on implementation, conduct financial audits, and provide recommendations for improvement. They also manage accommodation for external participants and contribute to the ideation and execution of special events like the Guinness World Record attempt.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Sponsorship & Marketing ( S&M)",
+                "organizers": "Aarav Dogra, Jigyasa Sharma, Udit Dhawan",
+                "email": "sponsorship@aaruush.net",
+                "keywords": "corporate meetings, sponsors, marketing tactics, business deals",
+                "description": "The Sponsorship & Marketing committee (S&M) engages in corporate meetings, brings sponsors, and implements marketing ideas. They strategize marketing tactics to shape various business deals around the fest, creating a lasting impression and value for all stakeholders.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Workshops",
+                "organizers": "Uday Bharadiya, Umesh Kumar Siyak, Vaibhavi Tandon",
+                "email": "workshops@aaruush.org",
+                "keywords": "technology, collaboration, registrations, certificate distribution",
+                "description": "The Workshops committee conceptualizes and conducts workshops on various technology fields in collaboration with organizations across the country. They are responsible for common registrations before the main Aaruush Days and the distribution of certificates to participants.",
+                "events":"NA"
+            },
+
+            {
+                "name": "Team Envision",
+                "organizers": "Akash Gupta, Ayush Sharma, Dhaivat Vipat, Ravi R, Rishit Shivesh",
+                "email": "envision@aaruush.org",
+                "keywords": "innovation, AI/ML, app development, web development, game development, hardware, IoT, cloud, DevOps, blockchain, design, editorial",
+                "description": "Team Envision is a versatile multidisciplinary team within Aaruush. They specialize in various fields and have 9 divisions AI/ML, app and web development, game development, hardware & IoT, cloud & DevOps, blockchain, design, and editorial. The team collaborates to ideate, design, fabricate, and develop innovative solutions for complex campus and societal issues. They are driven by a passion for transforming ideas into reality through tangible products, research papers, and patents.",
+                "events":"TeachBot Epoch 1.0: A hands-on workshop on computer vision"
+            },
+
+            {
+                "name": "Team Outreach",
+                "organizers": "Abhishek Kumar, Akarsh Kishore, Sahil Das, Sayan Majumder, Vinay Sonkusale",
+                "email": "outreach@aaruush.org",
+                "keywords": "marketing research, databases, external relations, collaborations, events",
+                "description": "Team Outreach consists of individuals with versatile skills in various departments. They excel in marketing research, compiling and handling comprehensive databases, and analyzing data. The team focuses on maintaining strong relationships with external entities, fostering collaborations, and conducting various events. They are responsible for external relations and the smooth coordination of activities related to external entities. ",
+                "events":"NA"
+            },
+
+            {
+                "name": "Aaruush",
+                "organizers": "Total number of organizers in Aaruush are 52. The Secrataries of Aaruush are Ahsaas Shrivastava, Manazir Musthafa and DR Jeeva and two event organizers (EOs) of Aaruush are Nikhil Benny and Anushka Kadam. The team development organizers are Ayush Sharma and Vaibhavi Tandon. Aaruush has 16 Domains, 13 Committees and 2 Teams. ",
+                "email": "https://www.aaruush.org",
+                "keywords": "fest, techno-management, national-level, national-level techno-management fest",
+                "description": "Aaruush is a national-level techno-management fest organized at SRMIST.\n\nThis year marks the 17th edtion of this fest.\n\nAaruush means the first ray of sun.\n\n Aaruush was inaugrated in 2007 by Dr. A.P.J Abdul Kalam and was fonded by 4 final year students.\n\n The Convenor of Aaruush is Dr. A. Rathiinam Sir.\n\n Aaruush has four patrons namely  Dr. C Muthamizhchalvan (Vice Chancellor), T V Gopal (Dean of Engg & Tech), Dr. A Rathinam (Director of Alumni Affairs/ Aaruush/ Team Rudra),  Dr. V Thirumurugan (Associate Director Campus Life).\n\n The financial faculty coordinator of Aaruush is Velu Murugan Sir and financial advisor is VM Ponniah (Retd).\n\n The logo of Aaruush is rising sun.\n\n Till date more than 100 plus events with footfall more than 1,00,000. Aaruush has 16 Domains, 13 Committees and 2 Teams.",
+                "events":"ImpactAI: A artificial Intelligence and machine learning hackathon, TeachBot Epoch 1.0: A hands-on workshop on computer vision"
+            }
+
+
+
+        ] 
+}
+
+
+
+
+
+
+    
+    
+    
+    
+    
