@@ -123,7 +123,7 @@ def query_response(user_query) :
 def query():
 
 
-    response = query_response(" what is impactai")
+    response = query_response(" organizer of Xzone and Esports?")
     print(response)
 
 # print(similar_context("who are the organizers of Public relations?"))
