@@ -74,7 +74,6 @@ def similar_context(query):
     if similarity>0.9:
        smi_index.append(similarity)
     
-    
     elif similarity>0.7:
        smi_index.append(similarity)
 

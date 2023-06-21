@@ -61,7 +61,7 @@ def similar_context(query):
   )
               
   smi_index = []
-  print(data)
+
   for similarity in data:
     if similarity>0.9:
        smi_index.append(similarity)
@@ -75,14 +75,13 @@ def similar_context(query):
 
     elif similarity>0.4:
        smi_index.append(similarity)
-  print(len(smi_index))
+
 
   if len(smi_index) ==1:
      exact_info_index = data.index(smi_index[0])
 
   elif len(smi_index) >1:
      smi_index.sort() 
-     print(smi_index)
      exact_info_index = data.index(smi_index[-1])
 
   else:
@@ -120,12 +119,9 @@ def query_response(user_query) :
     
           
 
-def query():
-
-
-    response = query_response(" organizer of Xzone and Esports?")
+def query(user_query):
+    response = query_response(user_query)
     print(response)
 
-# print(similar_context("who are the organizers of Public relations?"))
 
-query()
+query("what is konstruction and canoe challenge ?")
