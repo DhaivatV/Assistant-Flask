@@ -119,6 +119,7 @@ def query_response(user_query) :
         return (context)
     else:
         final_query = ((("Give precise answers for the asked questions."+context + f'\n\nQ:{user_query}\n\nA:')))
+        # print(final_query)
         res = (get_response(final_query))
         return res
 
@@ -126,8 +127,8 @@ def query_response(user_query) :
 @app.route('/query', methods=['POST'])
 def query():
     data = request.get_json()
-    user_query = (data.get('user_query'))
-    print(user_query)
+    user_query = (data.get('user_query')+ " in aaruush")
+    # print(user_query)
     try:
       response = query_response(user_query)
       return jsonify({'response': response})

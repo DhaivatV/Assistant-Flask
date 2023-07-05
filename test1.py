@@ -61,8 +61,9 @@ def similar_context(query):
   )
               
   smi_index = []
-
+  print(data)
   for similarity in data:
+    print(similarity)
     if similarity>0.9:
        smi_index.append(similarity)
     
@@ -124,4 +125,4 @@ def query(user_query):
     print(response)
 
 
-query("what is konstruction and canoe challenge ?")
+query("Rishit in aaruush")
