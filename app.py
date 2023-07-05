@@ -217,7 +217,9 @@ def query_response(user_query) :
         final_query = "Instruction: Give the answer for the question asked in a short and insightful manner using the given data below.\n\n"+context + f'\n\nQ:{user_query}\n\nA:'
         res = (get_response(final_query))
         return res
-
+@app.route('/', methods=['GET'])
+def home():
+   return({"message":"Hello!! Welcome to AVA."})
 
 @app.route('/query', methods=['POST'])
 def query():
