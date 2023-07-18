@@ -270,7 +270,7 @@
             },
 
             {
-                "name": "Team Envision",
+                "name": "Team Envision (Envision)",
                 "organizers": "Akash Gupta, Ayush Sharma, Dhaivat Vipat, Ravi R, Rishit Shivesh",
                 "email": "envision@aaruush.org",
                 "keywords": "innovation, AI/ML, app development, web development, game development, hardware, IoT, cloud, DevOps, blockchain, design, editorial",
@@ -296,7 +296,7 @@
                 "events":"{ImpactAI: A artificial Intelligence and machine learning hackathon}, {TeachBot Epoch 1.0: A hands-on workshop on computer vision}, {Square One: The first offline event of any new edition of Aaruush.Marks the transition of power from the previous organizers to the newly elected ones.Takes place at the beginning of the new edition of Aaruush.}"
             }
 
-
+            
 
         ] 
 }
